@@ -3,7 +3,9 @@ export default function HelloWorld() {
         // Di dalam satu funcion hanya bisa mengembalikan satu pembungkus saja
         <div>
             <Header />
-            <Paragraf />
+            {/* Untuk menambahkan value di paragraf */}
+            <Paragraf paragraf="Hello World"/>
+            <Keterangan />
         </div>
     )
 }
@@ -15,8 +17,24 @@ function Header(){
     )
 }
 
-function Paragraf(){
+// Cara menggunakan destructing props atau value default ketika kita tidak memasukkan value
+function Paragraf({paragraf = "Ups, Paragraf Default"}){
     return (
-        <p>Ini adalah pertama belajar react saya dari programmer Yohan</p>
+        // Cara menggunakan style inline
+        <p style={{
+            color: "blue",
+            backgroundColor: "yellow"
+        }}>{paragraf}</p>
+    )
+}
+
+// Berikut cara menggunakan variable/kode Javascript dan cara memanggilnya di jsx
+function Keterangan(){
+    const keterangan = "Sudah Makan Belum?";
+    return (
+        // Menggunakan kurung kurawal {} untuk memanggil variable
+        <p style={{
+            color: "red"
+        }}>{keterangan.toLowerCase()}</p>
     )
 }
