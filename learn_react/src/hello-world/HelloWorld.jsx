@@ -1,3 +1,7 @@
+// Cara untuk memanggil css external
+import './HelloWorld.css'
+
+
 export default function HelloWorld() {
 
     const props = {
@@ -20,7 +24,7 @@ export default function HelloWorld() {
 // Untuk Function harus menggunakan huruf besar pada awal
 function Header(){
     return (
-        <h1>Hello World</h1>
+        <h1 className='title'>Hello World</h1>
     )
 }
 
@@ -40,8 +44,6 @@ function Keterangan(){
     const keterangan = "Sudah Makan Belum?";
     return (
         // Menggunakan kurung kurawal {} untuk memanggil variable
-        <p style={{
-            color: "red"
-        }}>{keterangan.toLowerCase()}</p>
+        <p className='content'>{keterangan.toLowerCase()}</p>
     )
 }
