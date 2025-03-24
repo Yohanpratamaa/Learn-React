@@ -1,10 +1,17 @@
 export default function HelloWorld() {
+
+    const props = {
+        paragraf: "Hello World Saya Yohan"
+    }
+
     return (
         // Di dalam satu funcion hanya bisa mengembalikan satu pembungkus saja
         <div>
             <Header />
             {/* Untuk menambahkan value di paragraf */}
-            <Paragraf paragraf="Hello World"/>
+            <Paragraf paragraf={props.paragraf}/>
+            {/* Spread Syntax adalah untuk meforward semua props ke child component ... */}
+            <Paragraf {...props}/>
             <Keterangan />
         </div>
     )
